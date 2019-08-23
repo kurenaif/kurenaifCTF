@@ -17,5 +17,4 @@ def encrypt(S, num):
 
 m = flag # note: len(m) is prime number!
 c = encrypt(m, random.randrange(len(m)-1)+1)
-for i in range(len(c)):
-    print("C[{}]={}".format(i,c[i]))
+print("C =", c)

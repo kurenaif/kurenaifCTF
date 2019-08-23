@@ -15,7 +15,7 @@ def encrypt(S, num):
         res.append(sum(cs[i:i+num]))
     return res
 
-m = flag
+m = flag # note: len(m) is prime number!
 c = encrypt(m, random.randrange(len(m)-1)+1)
 for i in range(len(c)):
     print("C[{}]={}".format(i,c[i]))

@@ -1,0 +1,1 @@
+flag format: `kurenaifCTF{*}`

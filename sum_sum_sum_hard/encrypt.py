@@ -37,7 +37,16 @@ def encrypt(cs, num):
     
     return res
 
+def check(m):
+    for i in range(2,len(m)):
+        if len(m) % i == 0:
+            return False
+    return True
+
 m = flag # note: len(m) is prime number!
+if not check(m):
+    print("len(m) must be prime number!")
+    os.Exit(1)
 m = string_to_ord_list(m)
 print("sum = ", sum(m))
 primes =  prime_list(len(m))

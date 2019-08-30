@@ -2,6 +2,7 @@ import hashlib
 from flag import flag
 
 print("length:", len(flag))
+assert flag[0:12] == "kurenaifCTF{"
 m = list(flag)
 m.sort()
 

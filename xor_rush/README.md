@@ -1,3 +1,5 @@
+flag format: `kurenaifCTF{*}`
+
 # xor rush
 
 この問題はハッシュ化の性質上、別の文字列でも同じハッシュ値を示してしまいます。

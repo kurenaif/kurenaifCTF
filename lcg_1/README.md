@@ -16,6 +16,8 @@ X[1] = ?
 
 ## 答え合わせの方法
 
+correctと出たら正解
+
 ```
 $ python3 check.py
 input: ここに答えを入力する

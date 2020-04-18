@@ -23,4 +23,4 @@ for i in range(cnt):
     print("X[{}] = {}".format(i,r.next()))
 
 print("X[{}] = ?".format(cnt))
-print("X[{}] = {}".format(cnt, r.next()))
+# print("X[{}] = {}".format(cnt, r.next()))

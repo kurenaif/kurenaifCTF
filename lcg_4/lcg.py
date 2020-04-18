@@ -44,10 +44,10 @@ class MyLCG:
 r = MyLCG(int(binascii.hexlify(os.urandom(16)), 16))
 # print("A = " + str(r.A))
 # print("B = " + str(r.B))
+# print("M = " + str(r.M))
 print("# M is prime number!")
-print("M = " + str(r.M))
 
-cnt = 3
+cnt = 7
 for i in range(cnt):
     print("X[{}] = {}".format(i,r.next()))
 

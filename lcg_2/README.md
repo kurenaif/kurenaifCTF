@@ -1,4 +1,4 @@
-# Linear congruential generators 1
+# Linear congruential generators 2
 
 ## 問題
 

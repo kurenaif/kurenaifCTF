@@ -1,4 +1,6 @@
-# RSA for beginner
+# RSA Problem 2
+
+注意: まだこの問題は他人にテストしてもらってません。もし正解できたり、不備っぽい挙動をしたら [@fwarashi](https://twitter.com/fwarashi) に連絡してください
 
 ## 問題
 

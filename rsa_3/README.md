@@ -13,7 +13,7 @@ pip install pycryptodome
 
 ## 問題
 
-平分 `m` を求めてください。
+平文 `m` を求めてください。
 
 
 ```

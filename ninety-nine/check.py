@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 from Crypto.Util.number import *
 
 print("answer: ", end="")

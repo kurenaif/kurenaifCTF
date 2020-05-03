@@ -1,7 +1,5 @@
 # RSA Problem 3
 
-注意: まだこの問題は他人にテストしてもらってません。もし正解できたり、不備っぽい挙動をしたら [@fwarashi](https://twitter.com/fwarashi) に連絡してください
-
 ### Requirements
 
 `pycryptodome`

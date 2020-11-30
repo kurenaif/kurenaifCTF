@@ -7,9 +7,6 @@ import base64
 key = b"00000000000000000000000000000000"
 
 def bytearray_to_blocks(barray: bytearray) -> List[int]:
-    if len(barray) % 16 != 0:
-        print("len(barray) % 16 must be 0", file=sys.stderr)
-
     blocks = [[]]
 
     for i in range(len(barray)):
@@ -23,10 +20,10 @@ def print_bytearray(barray: bytearray):
     blocks = bytearray_to_blocks(barray)
     for i in range(len(blocks)):
         block = blocks[i]
-        print(f"block {i}: ", end="")
+        print(f"block {i}: ", end="", file=sys.stderr)
         for num in block:
-            print(f"|{num:02x}", end="")
-        print("|")
+            print(f"|{num:02x}", end="", file=sys.stderr)
+        print("|", file=sys.stderr)
 
 def pad(barray: bytearray) -> bytearray:
     pad_length = 16 - (len(barray) % 16)
@@ -35,7 +32,7 @@ def pad(barray: bytearray) -> bytearray:
     return barray
 
 def unpad(barray: bytearray) -> bytearray:
-    if barray[-1] > 16:
+    if barray[-1] == 0 or barray[-1] > 16:
         raise Exception("padding error")
     if len(barray) == 0 or len(barray) % 16 != 0:
         raise Exception("padding error")
@@ -52,9 +49,9 @@ def encrypt(plain_text: bytearray):
     iv = get_random_bytes(16)
     cipher = AES.new(key, AES.MODE_CBC, iv)
     cipher_text = cipher.encrypt(plain_text)
-    print("encrypted text:")
+    print("encrypted text:", file=sys.stderr)
     print_bytearray(cipher_text)
-    print()
+    print(file=sys.stderr)
 
     return iv + cipher_text
 
@@ -63,12 +60,15 @@ def decrypt(cipher_text: bytearray):
     cipher_text = cipher_text[16:]
     cipher = AES.new(key, AES.MODE_CBC, iv)
     plain_text = cipher.decrypt(cipher_text)
-    print("decrypted text (debug):")
+    print("decrypted text (debug):", file=sys.stderr)
     print_bytearray(plain_text)
-    print()
+    print(file=sys.stderr)
     return plain_text
 
 plain_text = bytearray(b"kurenaifCTF{hogehogehogehoge_fugafugafugafuga}")
+print("plain_text: ")
+print_bytearray(plain_text)
+
 cipher_text = bytearray(encrypt(pad(plain_text)))
 
 print("flag is here!:", base64.b64encode(cipher_text).decode('utf-8'), end="\n\n")
@@ -78,5 +78,9 @@ while(True):
     plain_text = decrypt(cipher_text)
     try:
         unpad(plain_text)
+        print("result: ok!")
+        print("result: ok!", file=sys.stderr)
     except:
-        print("padding error")
+        print("result: padding error")
+        print("result: padding error", file=sys.stderr)
+    print("----------------------------", file=sys.stderr)
